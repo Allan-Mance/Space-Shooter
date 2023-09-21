@@ -34,6 +34,7 @@ func _on_timer_timeout():
 func damage(d):
 	health -= d
 	if health <= 0:
+		Global.update_score(500)
 		queue_free()
 
 func _on_area_2d_body_entered(body):

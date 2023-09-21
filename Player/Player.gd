@@ -51,6 +51,7 @@ func damage(d):
 			explosion.global_position = global_position
 			hide()
 			await explosion.animation_finished
+		Global.update_lives(-1)
 		queue_free()
 	
 

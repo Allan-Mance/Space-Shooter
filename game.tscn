@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dafnsnqre7o78"]
+[gd_scene load_steps=7 format=3 uid="uid://dafnsnqre7o78"]
 
 [ext_resource type="PackedScene" uid="uid://diku4uol7pqfy" path="res://Player/player.tscn" id="1_i4ved"]
 [ext_resource type="Script" path="res://Player/Player_Container.gd" id="2_osbig"]
 [ext_resource type="PackedScene" uid="uid://c567yqrcsxe33" path="res://Asteroid/asteroid.tscn" id="2_oxg5u"]
 [ext_resource type="PackedScene" uid="uid://cwheo4i7gii8x" path="res://Enemy/enemy.tscn" id="3_1o3dc"]
+[ext_resource type="Script" path="res://UI/HUD.gd" id="5_g5pg8"]
+[ext_resource type="FontFile" uid="uid://dixgl7gxsbvg2" path="res://Assets/hyperspace/Hyperspace Bold.otf" id="5_pn8vd"]
 
 [node name="Game" type="Node2D"]
 
@@ -27,3 +29,52 @@ position = Vector2(576, 324)
 
 [node name="Enemy" parent="Enemy_Container" instance=ExtResource("3_1o3dc")]
 position = Vector2(400, 100)
+
+[node name="IU" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="IU"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_g5pg8")
+
+[node name="Score" type="Label" parent="IU/HUD"]
+layout_mode = 1
+offset_left = 10.0
+offset_right = 210.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("5_pn8vd")
+theme_override_font_sizes/font_size = 20
+text = "Score:"
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="IU/HUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -210.0
+offset_right = -10.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("5_pn8vd")
+theme_override_font_sizes/font_size = 20
+text = "Time:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Indicator_Container" type="Control" parent="IU/HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Timer" type="Timer" parent="IU/HUD"]
+autostart = true
+
+[connection signal="timeout" from="IU/HUD/Timer" to="IU/HUD" method="_on_timer_timeout"]
