@@ -80,6 +80,7 @@ grow_vertical = 2
 autostart = true
 
 [node name="Menu" type="Control" parent="IU"]
+process_mode = 3
 visible = false
 layout_mode = 3
 anchors_preset = 15
