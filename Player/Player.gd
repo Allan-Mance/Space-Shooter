@@ -21,6 +21,8 @@ func get_input():
 		rotation += rotate_speed
 	return to_return.rotated(rotation)
 	
+var Bullet_Sound = null
+	
 func _physics_process(_delta):
 	velocity += get_input() * speed
 	velocity = velocity.normalized() * clamp(velocity.length(), 0, max_speed) 
@@ -38,6 +40,9 @@ func _physics_process(_delta):
 		bullet.rotation = rotation
 		var Effects = get_node_or_null("/root/Game/Effects")
 		if Effects != null:
+			Bullet_Sound = get_node_or_null("/root/Game/Bullet_Sound")
+			if Bullet_Sound != null:
+				Bullet_Sound.play()
 			Effects.add_child(bullet)
 			
 			

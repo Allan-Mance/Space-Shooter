@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dafnsnqre7o78"]
+[gd_scene load_steps=13 format=3 uid="uid://dafnsnqre7o78"]
 
 [ext_resource type="PackedScene" uid="uid://diku4uol7pqfy" path="res://Player/player.tscn" id="1_i4ved"]
 [ext_resource type="Texture2D" uid="uid://d02uwhpll2cet" path="res://Assets/IslandsMap.png" id="1_mawnw"]
@@ -9,6 +9,9 @@
 [ext_resource type="FontFile" uid="uid://dixgl7gxsbvg2" path="res://Assets/hyperspace/Hyperspace Bold.otf" id="5_pn8vd"]
 [ext_resource type="Script" path="res://UI/Menu.gd" id="7_5lr25"]
 [ext_resource type="FontFile" uid="uid://bvhjuhmialtrc" path="res://Assets/hyperspace/Hyperspace.otf" id="8_hssbw"]
+[ext_resource type="AudioStream" uid="uid://dymqbqwdo4ydy" path="res://Sound Effects/Music.mp3" id="10_c8068"]
+[ext_resource type="AudioStream" uid="uid://dfr82mkxis8o4" path="res://Sound Effects/Gunshot.wav" id="11_0ryoj"]
+[ext_resource type="AudioStream" uid="uid://bcytpatv18jhm" path="res://Sound Effects/Enemy_Gunshot.wav" id="12_xb7ja"]
 
 [node name="Game" type="Node2D"]
 
@@ -153,6 +156,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.501961)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+process_mode = 1
+stream = ExtResource("10_c8068")
+autoplay = true
+
+[node name="Bullet_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_0ryoj")
+
+[node name="Enemy_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_xb7ja")
 
 [connection signal="timeout" from="UI/HUD/Timer" to="UI/HUD" method="_on_timer_timeout"]
 [connection signal="pressed" from="UI/Menu/Restart" to="UI/Menu" method="_on_restart_pressed"]
