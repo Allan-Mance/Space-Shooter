@@ -170,6 +170,7 @@ stream = ExtResource("11_0ryoj")
 stream = ExtResource("12_xb7ja")
 
 [node name="Explosion_Sound" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(0.787866, 1.20462)
 stream = ExtResource("13_yupdg")
 volume_db = 5.0
 
