@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dafnsnqre7o78"]
+[gd_scene load_steps=14 format=3 uid="uid://dafnsnqre7o78"]
 
 [ext_resource type="PackedScene" uid="uid://diku4uol7pqfy" path="res://Player/player.tscn" id="1_i4ved"]
 [ext_resource type="Texture2D" uid="uid://d02uwhpll2cet" path="res://Assets/IslandsMap.png" id="1_mawnw"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://dymqbqwdo4ydy" path="res://Sound Effects/Music.mp3" id="10_c8068"]
 [ext_resource type="AudioStream" uid="uid://dfr82mkxis8o4" path="res://Sound Effects/Gunshot.wav" id="11_0ryoj"]
 [ext_resource type="AudioStream" uid="uid://bcytpatv18jhm" path="res://Sound Effects/Enemy_Gunshot.wav" id="12_xb7ja"]
+[ext_resource type="AudioStream" uid="uid://7rilfxmlxpkh" path="res://Sound Effects/Explosion.wav" id="13_yupdg"]
 
 [node name="Game" type="Node2D"]
 
@@ -167,6 +168,10 @@ stream = ExtResource("11_0ryoj")
 
 [node name="Enemy_Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_xb7ja")
+
+[node name="Explosion_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_yupdg")
+volume_db = 5.0
 
 [connection signal="timeout" from="UI/HUD/Timer" to="UI/HUD" method="_on_timer_timeout"]
 [connection signal="pressed" from="UI/Menu/Restart" to="UI/Menu" method="_on_restart_pressed"]
