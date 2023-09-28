@@ -29,6 +29,9 @@ position = Vector2(100, 100)
 [node name="Asteroid2" parent="Asteroid_Container" instance=ExtResource("2_oxg5u")]
 position = Vector2(900, 600)
 
+[node name="Asteroid3" parent="Asteroid_Container" instance=ExtResource("2_oxg5u")]
+position = Vector2(400, 400)
+
 [node name="Effects" type="Node2D" parent="."]
 
 [node name="Player_Container" type="Node2D" parent="."]
@@ -37,6 +40,9 @@ script = ExtResource("2_osbig")
 [node name="Enemy_Container" type="Node2D" parent="."]
 
 [node name="Enemy" parent="Enemy_Container" instance=ExtResource("3_1o3dc")]
+position = Vector2(400, 100)
+
+[node name="Enemy2" parent="Enemy_Container" instance=ExtResource("3_1o3dc")]
 position = Vector2(400, 100)
 
 [node name="UI" type="CanvasLayer" parent="."]
