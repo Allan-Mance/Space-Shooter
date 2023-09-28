@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://orolqfmi7j4e"]
+
+[ext_resource type="Script" path="res://UI/selector.gd" id="1_wvsxl"]
+[ext_resource type="FontFile" uid="uid://bvhjuhmialtrc" path="res://Assets/hyperspace/Hyperspace.otf" id="2_nqe2b"]
+[ext_resource type="Texture2D" uid="uid://djnrfi0eyphpp" path="res://Assets/C47a.png" id="3_i2k5c"]
+[ext_resource type="Texture2D" uid="uid://cu15ea8yupll4" path="res://Assets/B-17g.png" id="4_jq1c0"]
+
+[node name="Selector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wvsxl")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_nqe2b")
+theme_override_font_sizes/font_size = 70
+text = "Select Your Plane"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.5
+offset_top = 26.0
+offset_right = 101.5
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="Ship1" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_i2k5c")
+
+[node name="Ship2" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_jq1c0")
+
+[connection signal="pressed" from="HBoxContainer/Ship1" to="." method="_on_ship_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/Ship2" to="." method="_on_ship_2_pressed"]

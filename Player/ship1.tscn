@@ -1,22 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://diku4uol7pqfy"]
+[gd_scene load_steps=4 format=3 uid="uid://dt7383kuu3tho"]
 
-[ext_resource type="Script" path="res://Player/Player.gd" id="1_8veo7"]
-[ext_resource type="Texture2D" uid="uid://cygyceq81lmbg" path="res://Assets/Exhaust.png" id="2_1qc21"]
-[ext_resource type="Texture2D" uid="uid://djnrfi0eyphpp" path="res://Assets/C47a.png" id="3_vgth2"]
+[ext_resource type="Script" path="res://Player/ship1.gd" id="1_7yg2g"]
+[ext_resource type="Texture2D" uid="uid://cygyceq81lmbg" path="res://Assets/Exhaust.png" id="2_3iald"]
+[ext_resource type="Texture2D" uid="uid://djnrfi0eyphpp" path="res://Assets/C47a.png" id="3_awxdi"]
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(512, 300)
-script = ExtResource("1_8veo7")
+script = ExtResource("1_7yg2g")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="Exhaust" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, 50)
-texture = ExtResource("2_1qc21")
+texture = ExtResource("2_3iald")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_vgth2")
+texture = ExtResource("3_awxdi")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(5, -25.2, 5, -22.5, 28.3, 17, 27.2, 19, 25.9, 19, 17.9, 28, 13.6, 28, -0.700001, 21.7, -19, 29, -19, 25.9, -28, 17.9, -28, 14.4, -3, -25.6, -3, -29.2)
